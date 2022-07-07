@@ -35,9 +35,6 @@ public class Person {
     }
 
     public boolean isOfAge() {
-        if(this.getAge() >= 18) {
-            return true;
-        }
-        return false;
+        return (this.getAge() >= 18);
     }
 }
