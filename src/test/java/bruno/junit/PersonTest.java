@@ -9,6 +9,14 @@ import java.util.List;
 
 public class PersonTest {
 
+
+    @Test
+    void shouldCalculateAgeCorrectly() {
+        Person marco = new Person("Marco", LocalDate.of(2000, 1,1 ));
+        Assertions.assertEquals(22, marco.getAge());
+        
+    }
+
     @Test
     void shouldReturnIfOfAge() {
         Person bruno = new Person("Bruno", LocalDate.of(2020, 7, 1));
