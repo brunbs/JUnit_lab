@@ -8,6 +8,7 @@ public class AccountTest {
     @Test
     void validateBalance() {
         Account account = new Account("123456", 100d);
+        Account accountToNull = new Account("2222", 250d);
         Assertions.assertNotNull(account);
 
         account.deposit(50d);
@@ -20,8 +21,15 @@ public class AccountTest {
 
         Assertions.assertNotEquals(101d, account.getBalance());
 
-        account = null;
-        Assertions.assertNull(account);
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            account.withdraw(250d);
+        });
+
+        Assertions.assertDoesNotThrow(() -> account.withdraw(10d));
+
+
+        accountToNull = null;
+        Assertions.assertNull(accountToNull);
 
     }
 

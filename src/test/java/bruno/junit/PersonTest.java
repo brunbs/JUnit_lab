@@ -14,7 +14,7 @@ public class PersonTest {
     void shouldCalculateAgeCorrectly() {
         Person marco = new Person("Marco", LocalDate.of(2000, 1,1 ));
         Assertions.assertEquals(22, marco.getAge());
-        
+
     }
 
     @Test

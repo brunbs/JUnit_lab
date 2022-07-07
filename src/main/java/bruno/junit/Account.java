@@ -33,7 +33,10 @@ public class Account {
     public void withdraw(Double value) {
         if(this.isSufficientBalance(value)) {
             this.balance -= value;
+        } else {
+            throw new IllegalArgumentException("Insufficient funds");
         }
+
     }
 
     public boolean isSufficientBalance(Double value) {
